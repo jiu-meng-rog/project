@@ -5,12 +5,11 @@
     <select id="pageQuery" resultType="com.sky.entity.Employee" parameterType="com.sky.dto.EmployeePageQueryDTO">
         select * from employee
         <where>
-            <if test="name != null and name != ''">
-                and name like concat('%',#{name},'%')
-            </if>
+            <if test="name != null and name != ''">and name like concat('%',#{name},'%')</if>
         </where>
         order by create_time desc
     </select>
+
     <update id="update" parameterType="com.sky.entity.Employee">
         update employee
         <set>
