@@ -7,6 +7,8 @@ import com.sky.dto.PasswordEditDTO;
 import com.sky.entity.Employee;
 import com.sky.result.PageResult;
 
+import javax.servlet.http.HttpServletRequest;
+
 public interface EmployeeService {
 
     /**
@@ -52,5 +54,5 @@ public interface EmployeeService {
      * 修改密码
      * @param passwordEditDTO
      */
-    void editPassword(PasswordEditDTO passwordEditDTO);
+    void editPassword(PasswordEditDTO passwordEditDTO, HttpServletRequest request);
 }

@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -149,9 +150,9 @@ public class EmployeeController {
      */
     @PutMapping("/editPassword")
     @ApiOperation("修改密码")
-    public Result editPassword(@RequestBody PasswordEditDTO passwordEditDTO){
+    public Result editPassword(@RequestBody PasswordEditDTO passwordEditDTO, HttpServletRequest request){
         log.info("修改员工密码：{}",passwordEditDTO);
-        employeeService.editPassword(passwordEditDTO);
+        employeeService.editPassword(passwordEditDTO,request);
         return Result.success();
     }
 }

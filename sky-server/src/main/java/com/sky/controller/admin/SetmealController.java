@@ -46,7 +46,7 @@ public class SetmealController {
      * @param setmealPageQueryDTO
      * @return
      */
-    @GetMapping("page")
+    @GetMapping("/page")
     @ApiOperation("套餐分页查询")
     public Result<PageResult> page(SetmealPageQueryDTO setmealPageQueryDTO) {
         log.info("套餐分页查询：{}",setmealPageQueryDTO);
